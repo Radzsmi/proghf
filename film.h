@@ -24,7 +24,7 @@ public:
 	void kiir();
 	virtual std::string getPlusData() { return "Nincsen plusz adatom"; }
 	virtual void setPlusData(std::string uj) {};
-	void filmModosit();
+	void filmModosit(int answer=-1, std::string megadott="");
 	virtual ~Film() {};
 };
 class Filmek {
@@ -45,10 +45,12 @@ public:
 	void add(Film* addelement);
 	void add(std::string nev, int hossz, int kiadas, char jeloles);
 	void kilistaz();
-	void keres(Filmek& talalatok);
+	void keres(Filmek& talalatok,std::string mit="");
 	void keresveTorol();
 	void keresveModosit();
 	void clear();
+	void hozzaadas();
+	void kereslistaz();
 	~Filmek() { 
 		clear();
 		delete[] filmek;

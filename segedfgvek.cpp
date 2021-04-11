@@ -52,50 +52,64 @@ void clrscreen() {
 	cin.ignore();
 	cout << "\033[2J\033[1;1H";
 }
-void kereslistaz(Filmek& lista) {
-	Filmek tmp;
-	lista.keres(tmp);
-	for (int i = 0; i < tmp.getMeret(); i++) {
-		tmp.getFilm(i).kiir();
-		tmp.setFilmPointer(i, NULL);
-	}
-}
 void txtTorol() {
 	std::ofstream ofs;
 	ofs.open("filmlista.txt", ofstream::out | ofstream::trunc);
 	ofs.close();
 }
-void hozzaadas(Filmek& lista) {
-	std::string cim;
-	int hossz = 0, hour, sec, min;
-	char c, f;
-	int megjeleve;
-	char tipus;
-	std::string plusdata;
-	cout << "Udv a hozzaadas menuben" << endl;
-	cout << "Add meg a film cimet!" << endl;
-	getline(cin, cim);
-	cout << "Add meg a hosszat (Hour:Min:Sec)" << endl;
-	cin >> hour>>c>>min>>f>>sec;
-	hossz = hour * 3600 + min * 60 + sec;
-	cin.ignore();
-	cout << "Add meg a megjelenes evet" << endl;
-	megjeleve = getszam();
-	cout << "Add meg a Tipusanak jelet(pl. D dokumentumfilm,F sima film)" << endl;
-	tipus = getjel();
-	if (tipus != 'F') {
-		cout << "Add meg a plusz adatot!" << endl;
-		if (tipus == 'C') plusdata = std::to_string(getszam());
-		else getline(cin, plusdata);
-		Film* tmp = customconst(cim, hossz, megjeleve, tipus, plusdata);
-		if (tmp != NULL) lista.add(tmp);
-		else {
-			cout << "Ismeretlen adattipus,sima filmkent adatam hozza." << endl;
-			lista.add(cim, hossz, megjeleve, 'F');
-		}
+void beolvas(Filmek& lista) {
+	fstream f;
+	string sor;
+	std::string nev = "";
+	int hossz;
+	int kiadas;
+	char jeloles;
+	bool sorveg = false;
+	f.open("filmlista.txt", ios::in);
+	if (!f) {
 	}
 	else {
-		lista.add(cim, hossz, megjeleve, tipus);
+		std::getline(f, sor);
+		std::getline(f, sor);
+		while (!f.eof())
+		{
+			sorveg = true;
+			jeloles = sor[0];
+			for (int i = 2; i<int(sor.length()); i++) nev += sor[i];
+			std::getline(f, sor);
+			hossz = std::atoi(sor.c_str());
+			std::getline(f, sor);
+			kiadas = std::atoi(sor.c_str());
+			sorveg = false;
+			std::getline(f, sor);
+			if (jeloles != 'F') {
+				Film* tmp = customconst(nev, hossz, kiadas, jeloles, sor);
+				lista.add(tmp);
+				std::getline(f, sor);
+			}
+			else {
+				lista.add(nev, hossz, kiadas, jeloles);
+			}
+			nev = "";
+			std::getline(f, sor);
+		}
 	}
-	cout << "Sikeres hozzaadas!" << endl;
+	f.close();
+}
+void visszair(Filmek& lista) {
+	txtTorol();
+	ofstream myfile;
+	myfile.open("filmlista.txt");
+	myfile << "-\n";
+	for (int i = 0; i < lista.getMeret(); i++) {
+		Film* tmp = lista.getFilmPointer(i);
+		myfile << tmp->getJel() << ':' << tmp->getNev() << '\n';
+		myfile << tmp->getHossz() << '\n' << tmp->getKiadas() << '\n';
+		if (tmp->getJel() != 'F') {
+			myfile << tmp->getPlusData() << '\n';
+		}
+		myfile << "-\n";
+	}
+	myfile.close();
+	lista.clear();
 }

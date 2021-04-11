@@ -18,16 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="beolvas.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="filmcpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="segedfgvek.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fajlkezeles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="memtrace.cpp">
@@ -47,10 +41,10 @@
     <ClInclude Include="segedfgvek.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fajlkezeles.h">
+    <ClInclude Include="memtrace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="memtrace.h">
+    <ClInclude Include="gtest_lite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

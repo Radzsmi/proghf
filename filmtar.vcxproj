@@ -139,8 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="beolvas.cpp" />
-    <ClCompile Include="fajlkezeles.cpp" />
     <ClCompile Include="filmcpp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="memtrace.cpp" />
@@ -148,9 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="beolvas.h" />
-    <ClInclude Include="fajlkezeles.h" />
     <ClInclude Include="film.h" />
     <ClInclude Include="filmtipusok.h" />
+    <ClInclude Include="gtest_lite.h" />
     <ClInclude Include="memtrace.h" />
     <ClInclude Include="segedfgvek.h" />
   </ItemGroup>

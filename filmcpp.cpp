@@ -3,6 +3,7 @@
 #include "filmtipusok.h"
 #include "segedfgvek.h"
 #include <string>
+using namespace std;
 
 void Filmek::add(Film* addelement) {
 	Film** uj = new Film*[this->meret+1];
@@ -69,16 +70,17 @@ std::string Film::getKiirhossz(){
 	strtime += std::to_string(seconds%60);
 	return strtime;
 }
-void Filmek::keres(Filmek& talalatok) {
-	std::string keresendo;
+void Filmek::keres(Filmek& talalatok,std::string mit) {
 	int ctr = 0;
-	std::cout << "Udv a kereses menuben." << std::endl;
-	std::cout << "Keress valamire: "<<std::flush;
-	std::getline(std::cin, keresendo);
+	if (mit == "") {
+		std::cout << "Udv a kereses menuben." << std::endl;
+		std::cout << "Keress valamire: " << std::flush;
+		std::getline(std::cin, mit);
+	}
 	for (int i = 0; i < meret; i++) {
 		std::string kisbetusnev="";
 		for (int f = 0; f <int( this->filmek[i]->getNev().length()); f++) kisbetusnev += tolower(this->filmek[i]->getNev()[f]);
-		if (kisbetusnev.find(keresendo) != std::string::npos) {
+		if (kisbetusnev.find(mit) != std::string::npos) {
 			talalatok.add(this->filmek[i]);
 			ctr++;
 		}
@@ -127,28 +129,36 @@ void Filmek::keresveModosit() {
 	filmptr->filmModosit();
 	for (int i = 0; i < tmp.getMeret(); i++) tmp.setFilmPointer(i, NULL);
 }
-void Film::filmModosit() {
-	int answer = -1;
+void Film::filmModosit(int answer,string megadott) {
 	int ujdata;
 	std::string plusdata;
-	std::cout << "Mit szeretnel modositani?" << std::endl;
-	std::cout << "(1) Nev" << std::endl;
-	std::cout << "(2) Hossz" << std::endl;
-	std::cout << "(3) Kiadas" << std::endl;
-	if (this->getJel() != 'F')
-		std::cout << "(4) Plusz adat" << std::endl;
-	std::cin >> answer;
-	std::cin.ignore();
+	if (answer == -1) {
+		std::cout << "Mit szeretnel modositani?" << std::endl;
+		std::cout << "(1) Nev" << std::endl;
+		std::cout << "(2) Hossz" << std::endl;
+		std::cout << "(3) Kiadas" << std::endl;
+		if (this->getJel() != 'F')
+			std::cout << "(4) Plusz adat" << std::endl;
+		std::cin >> answer;
+		std::cin.ignore();
+	}
+	else {
+		if (answer == 1) this->setNev(megadott);
+		if (answer == 2) this->setHossz(std::stoi(megadott));
+		if (answer == 3) this->setKiadas(std::stoi(megadott));
+		if (answer == 4) this->setPlusData(megadott);
+		return;
+	}
 	if ((answer < 4 && answer>0) || (answer < 5 && answer >0 && this->getJel() != 'F')) {
 		std::cout << "Add meg az uj adatot!" << std::endl;
 		if (answer == 2 || answer == 3) {
-			std::cin >> ujdata;
-			std::cin.ignore();
+			ujdata=getszam();
 			if (answer == 2) this->setHossz(ujdata);
 			else this->setKiadas(ujdata);
 		}
 		else {
-			getline(std::cin, plusdata);
+			if (this->getJel() == 'C') plusdata = std::to_string(getszam());
+			else getline(std::cin, plusdata);
 			if (answer == 1) this->setNev(plusdata);
 			else this->setPlusData(plusdata);
 		}
@@ -162,4 +172,46 @@ void Filmek::clear() {
 		delete filmek[i];
 	}
 	meret = 0;
+}
+void Filmek::hozzaadas() {
+	std::string cim;
+	int hossz = 0, hour, sec, min;
+	char c, f;
+	int megjeleve;
+	char tipus;
+	std::string plusdata;
+	cout << "Udv a hozzaadas menuben" << endl;
+	cout << "Add meg a film cimet!" << endl;
+	getline(cin, cim);
+	cout << "Add meg a hosszat (Hour:Min:Sec)" << endl;
+	cin >> hour >> c >> min >> f >> sec;
+	hossz = hour * 3600 + min * 60 + sec;
+	cin.ignore();
+	cout << "Add meg a megjelenes evet" << endl;
+	megjeleve = getszam();
+	cout << "Add meg a Tipusanak jelet(pl. D dokumentumfilm,F sima film)" << endl;
+	tipus = getjel();
+	if (tipus != 'F') {
+		cout << "Add meg a plusz adatot!" << endl;
+		if (tipus == 'C') plusdata = std::to_string(getszam());
+		else getline(cin, plusdata);
+		Film* tmp = customconst(cim, hossz, megjeleve, tipus, plusdata);
+		if (tmp != NULL) this->add(tmp);
+		else {
+			cout << "Ismeretlen adattipus,sima filmkent adatam hozza." << endl;
+			this->add(cim, hossz, megjeleve, 'F');
+		}
+	}
+	else {
+		this->add(cim, hossz, megjeleve, tipus);
+	}
+	cout << "Sikeres hozzaadas!" << endl;
+}
+void Filmek::kereslistaz() {
+	Filmek tmp;
+	this->keres(tmp);
+	for (int i = 0; i < tmp.getMeret(); i++) {
+		tmp.getFilm(i).kiir();
+		tmp.setFilmPointer(i, NULL);
+	}
 }

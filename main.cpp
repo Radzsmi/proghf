@@ -5,57 +5,127 @@
 #include "film.h"
 #include "beolvas.h"
 #include "segedfgvek.h"
-#include "fajlkezeles.h"
 #include "memtrace.h"
+#include "gtest_lite.h"
 #include <crtdbg.h>
 using namespace std;
+void test_0(Filmek& lista) {
+    TEST(Beolvasas, Beolvasas) {
+        if (lista.getMeret() != 0) {
+            EXPECT_STRNE("", lista.getFilm(0).getNev().c_str()) << "HIBAS BEOLVASAS";
+        }
+    }END;
+}
+void test_1(Filmek& lista) {
+    TEST(Addolas, addolas) {
+        lista.add("uj film", 1234, 1975, 'F');   //add default film
+        EXPECT_EQ(lista.getFilm(lista.getMeret()-1).getNev(), "uj film") << "Nem sikerult hozzaadni";
+        Film* tmp = customconst("egy uj csaladi film", 3464, 2001, 'C', "18");
+        lista.add(tmp);                         //add csaladi film
+        EXPECT_EQ(lista.getFilm(lista.getMeret() - 1).getPlusData(), "18") << "Nem jol adott hozza plusz adatot/filmet.";
+    }END;
+}
+void test_2(Filmek& lista) {
+    TEST(Kereses, kereses) {
+        Filmek tmp;
+        lista.keres(tmp, "egy uj csaladi film");
+        EXPECT_EQ("egy uj csaladi film", tmp.getFilm(0).getNev()) << "Hibas kereses!";
+        for (int i = 0; i < tmp.getMeret(); i++) {
+            tmp.setFilmPointer(i, NULL);
+        }
+    }END;
+}
+void test_3(Filmek& lista) {
+    TEST(Torles, Torles) {
+        Filmek tmp;
+        lista.keres(tmp, "uj film");
+        lista.torol(tmp.getFilm(0));
+        EXPECT_EQ(lista.getFilm(lista.getMeret() - 1).getNev(), "egy uj csaladi film") << "Hibas torles";
+        for (int i = 0; i < tmp.getMeret(); i++) {
+            tmp.setFilmPointer(i, NULL);
+        }
+    }END;
+}
+void test_4(Filmek& lista) {
+    TEST(Modositas, Modositas) {
+        Filmek tmp;
+        lista.keres(tmp, "egy uj csaladi film");
+        tmp.getFilmPointer(0)->filmModosit(1,"egy uj csaladi film 2");
+        EXPECT_EQ(lista.getFilm(lista.getMeret() - 1).getNev(), "egy uj csaladi film 2") << "Hibas modositas";
+        for (int i = 0; i < tmp.getMeret(); i++) {
+            tmp.setFilmPointer(i, NULL);
+        }
+    }END;
+}
+void test_5(Filmek& lista) {
+    TEST(Visszairas, Visszairas) {
+        visszair(lista);
+        EXPECT_EQ(0, lista.getMeret()) << "hibas visszairas";
+        beolvas(lista);
+        lista.torol(lista.getFilm(lista.getMeret() - 1));
+        visszair(lista);
+    }END;
+}
 
 int main() {
 	Filmek lista;
 	int  answer;
+    cout << "1-Test,2-Hasznalat" << endl;
 	beolvas(lista);
-    do
-    {
-        menukiir();
-        cin >> answer;
-        cin.ignore();
-        if (answer>=0 && answer<6) {
-            switch (answer)
-            {
-            case 1:
-                lista.kilistaz();
-                clrscreen();
-                break;
-
-            case 2:
-                kereslistaz(lista);
-                clrscreen();
-                break;
-
-            case 3:
-                lista.keresveTorol();
-                clrscreen();
-                break;
-
-            case 4:
-                lista.keresveModosit();
-                clrscreen();
-                break;
-            case 5:
-                hozzaadas(lista);
-                clrscreen();
-                break;
-
-            default:
-                cout << "Kilepes sikeres.";
-            }
-        }
-        else
+    cin >> answer;
+    cin.ignore();
+    if (answer == 1) {
+        test_0(lista);
+        test_1(lista);
+        test_2(lista);
+        test_3(lista);
+        test_4(lista);
+        test_5(lista);
+    }
+    if (answer == 2) {
+        do
         {
-            cout << "Bad choice! Please try again later.\n";
-            clrscreen();
-        }
-    } while (answer!=0);
-   visszair(lista);
+            menukiir();
+            cin >> answer;
+            cin.ignore();
+            if (answer >= 0 && answer < 6) {
+                switch (answer)
+                {
+                case 1:
+                    lista.kilistaz();
+                    clrscreen();
+                    break;
+
+                case 2:
+                    lista.kereslistaz();
+                    clrscreen();
+                    break;
+
+                case 3:
+                    lista.keresveTorol();
+                    clrscreen();
+                    break;
+
+                case 4:
+                    lista.keresveModosit();
+                    clrscreen();
+                    break;
+                case 5:
+                    lista.hozzaadas();
+                    clrscreen();
+                    break;
+
+                default:
+                    cout << "Kilepes sikeres.";
+                }
+            }
+            else
+            {
+                cout << "Bad choice! Please try again later.\n";
+                clrscreen();
+            }
+        } while (answer != 0);
+        visszair(lista);
+    }
 	return 0;
 }
