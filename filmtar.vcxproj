@@ -145,7 +145,6 @@
     <ClCompile Include="segedfgvek.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="beolvas.h" />
     <ClInclude Include="film.h" />
     <ClInclude Include="filmtipusok.h" />
     <ClInclude Include="gtest_lite.h" />

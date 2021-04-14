@@ -3,7 +3,6 @@
 
 
 #include "film.h"
-#include "beolvas.h"
 #include "segedfgvek.h"
 #include "memtrace.h"
 #include "gtest_lite.h"
