@@ -125,8 +125,14 @@ void Filmek::keresveModosit() {
 	}
 	std::cout << "Hanyadik elemet szeretned modositani? " << std::endl;
 	std::cin >> answer;
-	Film* filmptr = tmp.getFilmPointer(answer-1);
-	filmptr->filmModosit();
+	std::cin.ignore();
+	if (answer <= tmp.getMeret() && answer > 0) {
+		Film* filmptr = tmp.getFilmPointer(answer - 1);
+		filmptr->filmModosit();
+	}
+	else {
+		std::cout << "Rossz adat" << std::endl;
+	}
 	for (int i = 0; i < tmp.getMeret(); i++) tmp.setFilmPointer(i, NULL);
 }
 void Film::filmModosit(int answer,string megadott) {

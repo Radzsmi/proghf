@@ -1,0 +1,181 @@
+\doxysection{Filmek Class Reference}
+\label{class_filmek}\index{Filmek@{Filmek}}
+
+
+\doxyref{Filmek}{p.}{class_filmek} osztaly a filmek tarolasara.\+Film pointereket tarol dinamikusan.  
+
+
+
+
+{\ttfamily \#include $<$film.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Filmek} ()
+\item 
+int \textbf{ get\+Meret} ()
+\item 
+\textbf{ Film} \& \textbf{ get\+Film} (int i)
+\item 
+\textbf{ Film} $\ast$ \textbf{ get\+Film\+Pointer} (int i)
+\item 
+void \textbf{ set\+Film\+Pointer} (int i, \textbf{ Film} $\ast$mivel)
+\item 
+\textbf{ Film} $\ast$ \textbf{ get\+Filmek\+Pointer} ()
+\item 
+void \textbf{ set\+Film} (int i, \textbf{ Film} \&uj)
+\item 
+void \textbf{ torol} (int i)
+\item 
+void \textbf{ torol} (\textbf{ Film} \&torlendo)
+\item 
+void \textbf{ add} (\textbf{ Film} $\ast$addelement)
+\item 
+void \textbf{ add} (std\+::string nev, int hossz, int kiadas, char jeloles)
+\item 
+void \textbf{ kilistaz} ()
+\item 
+void \textbf{ keres} (\textbf{ Filmek} \&talalatok, std\+::string mit=\char`\"{}\char`\"{})
+\item 
+void \textbf{ keresve\+Torol} ()
+\item 
+void \textbf{ keresve\+Modosit} ()
+\item 
+void \textbf{ clear} ()
+\item 
+void \textbf{ hozzaadas} ()
+\item 
+void \textbf{ kereslistaz} ()
+\item 
+\textbf{ $\sim$\+Filmek} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Filmek}{p.}{class_filmek} osztaly a filmek tarolasara.\+Film pointereket tarol dinamikusan. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_filmek_a7e662d5d8a53a546add54ee345d020f9}} 
+\index{Filmek@{Filmek}!Filmek@{Filmek}}
+\index{Filmek@{Filmek}!Filmek@{Filmek}}
+\doxysubsubsection{Filmek()}
+{\footnotesize\ttfamily Filmek\+::\+Filmek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default konstruktor. \mbox{\label{class_filmek_ab62674150f9f4786a7bc05495899675a}} 
+\index{Filmek@{Filmek}!````~Filmek@{$\sim$Filmek}}
+\index{````~Filmek@{$\sim$Filmek}!Filmek@{Filmek}}
+\doxysubsubsection{$\sim$Filmek()}
+{\footnotesize\ttfamily Filmek\+::$\sim$\+Filmek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destruktor a filmekhez. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_filmek_ab9fde68fbcddb0ea948c74a4e8ba5467}} 
+\index{Filmek@{Filmek}!add@{add}}
+\index{add@{add}!Filmek@{Filmek}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Filmek\+::add (\begin{DoxyParamCaption}\item[{\textbf{ Film} $\ast$}]{addelement }\end{DoxyParamCaption})}
+
+Hozzaadja a listahoz egy filmet amelyre a megadott pointer mutat. \mbox{\label{class_filmek_a8feca3fb03583939923eac9b8a92cce5}} 
+\index{Filmek@{Filmek}!add@{add}}
+\index{add@{add}!Filmek@{Filmek}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Filmek\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{nev,  }\item[{int}]{hossz,  }\item[{int}]{kiadas,  }\item[{char}]{jeloles }\end{DoxyParamCaption})}
+
+A megadott adatok alapjan letrehoz egy filmet amit hozzaad a filmek listajahoz. \mbox{\label{class_filmek_a1141f993a0abeb3ee97eeac1acfd8527}} 
+\index{Filmek@{Filmek}!clear@{clear}}
+\index{clear@{clear}!Filmek@{Filmek}}
+\doxysubsubsection{clear()}
+{\footnotesize\ttfamily void Filmek\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Torli a tarolt filmeket,a meretet nullazza. \mbox{\label{class_filmek_a63d5afeabf0f2df70b29e08f69e42534}} 
+\index{Filmek@{Filmek}!getFilm@{getFilm}}
+\index{getFilm@{getFilm}!Filmek@{Filmek}}
+\doxysubsubsection{getFilm()}
+{\footnotesize\ttfamily \textbf{ Film}\& Filmek\+::get\+Film (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter amely az i. filmet adja vissza. \mbox{\label{class_filmek_aee1fbe2a1b660d03fbbb892ee12907d3}} 
+\index{Filmek@{Filmek}!getFilmekPointer@{getFilmekPointer}}
+\index{getFilmekPointer@{getFilmekPointer}!Filmek@{Filmek}}
+\doxysubsubsection{getFilmekPointer()}
+{\footnotesize\ttfamily \textbf{ Film}$\ast$ Filmek\+::get\+Filmek\+Pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter amely visszater a filmek pointerevel. \mbox{\label{class_filmek_a4f8c4e676849c17950f8546a01a08ee8}} 
+\index{Filmek@{Filmek}!getFilmPointer@{getFilmPointer}}
+\index{getFilmPointer@{getFilmPointer}!Filmek@{Filmek}}
+\doxysubsubsection{getFilmPointer()}
+{\footnotesize\ttfamily \textbf{ Film}$\ast$ Filmek\+::get\+Film\+Pointer (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter amely az i. film pointerevel ter vissza. \mbox{\label{class_filmek_a0e69df8ca289fba13b157d3c2235ebbe}} 
+\index{Filmek@{Filmek}!getMeret@{getMeret}}
+\index{getMeret@{getMeret}!Filmek@{Filmek}}
+\doxysubsubsection{getMeret()}
+{\footnotesize\ttfamily int Filmek\+::get\+Meret (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter a filmek szamara. \mbox{\label{class_filmek_ad9922ae873d478b29a8f8019d5e819d5}} 
+\index{Filmek@{Filmek}!hozzaadas@{hozzaadas}}
+\index{hozzaadas@{hozzaadas}!Filmek@{Filmek}}
+\doxysubsubsection{hozzaadas()}
+{\footnotesize\ttfamily void Filmek\+::hozzaadas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uj film adatainak bekerese utan uj filmet hoz letre amit a tarolt filmek koze helyez. \mbox{\label{class_filmek_ae7a8e8ed2d3926a467f378ee0e660a9e}} 
+\index{Filmek@{Filmek}!keres@{keres}}
+\index{keres@{keres}!Filmek@{Filmek}}
+\doxysubsubsection{keres()}
+{\footnotesize\ttfamily void Filmek\+::keres (\begin{DoxyParamCaption}\item[{\textbf{ Filmek} \&}]{talalatok,  }\item[{std\+::string}]{mit = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Kereses funkciot valositja meg,a talalatokat a megadott \doxyref{Filmek}{p.}{class_filmek} objektumba helyezi el.\+Lehetoseg van a keresett szot is megadni. \mbox{\label{class_filmek_acab64f7b457518ed93a4e9f6cfca0f16}} 
+\index{Filmek@{Filmek}!kereslistaz@{kereslistaz}}
+\index{kereslistaz@{kereslistaz}!Filmek@{Filmek}}
+\doxysubsubsection{kereslistaz()}
+{\footnotesize\ttfamily void Filmek\+::kereslistaz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Keresest valosit meg a tarolt filmek kozott es kiirja az eredmenyeket. \mbox{\label{class_filmek_a2ecfa5fdb7847c4003bee22e85c7f333}} 
+\index{Filmek@{Filmek}!keresveModosit@{keresveModosit}}
+\index{keresveModosit@{keresveModosit}!Filmek@{Filmek}}
+\doxysubsubsection{keresveModosit()}
+{\footnotesize\ttfamily void Filmek\+::keresve\+Modosit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Kereses utan a talalatok kozul lehetoseg ad a fuggveny a film adatainak modositasara. \mbox{\label{class_filmek_ad0ceb9656ae9dad604f923c90cf78907}} 
+\index{Filmek@{Filmek}!keresveTorol@{keresveTorol}}
+\index{keresveTorol@{keresveTorol}!Filmek@{Filmek}}
+\doxysubsubsection{keresveTorol()}
+{\footnotesize\ttfamily void Filmek\+::keresve\+Torol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Kereses funkciot valostija meg,a vegen a talalatok kozuli torlessel. \mbox{\label{class_filmek_a95fb99d71414ce42d6d2e1e9186df11a}} 
+\index{Filmek@{Filmek}!kilistaz@{kilistaz}}
+\index{kilistaz@{kilistaz}!Filmek@{Filmek}}
+\doxysubsubsection{kilistaz()}
+{\footnotesize\ttfamily void Filmek\+::kilistaz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Kiirja a tarolt filmeket. \mbox{\label{class_filmek_acde79798434538c419ab909ea6a31fee}} 
+\index{Filmek@{Filmek}!setFilm@{setFilm}}
+\index{setFilm@{setFilm}!Filmek@{Filmek}}
+\doxysubsubsection{setFilm()}
+{\footnotesize\ttfamily void Filmek\+::set\+Film (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{\textbf{ Film} \&}]{uj }\end{DoxyParamCaption})}
+
+Setter amely az i. filmet toroli es hozzaadja helyette az uj megadott filmet. \mbox{\label{class_filmek_aa0d7756b667702e8661718fba16408c6}} 
+\index{Filmek@{Filmek}!setFilmPointer@{setFilmPointer}}
+\index{setFilmPointer@{setFilmPointer}!Filmek@{Filmek}}
+\doxysubsubsection{setFilmPointer()}
+{\footnotesize\ttfamily void Filmek\+::set\+Film\+Pointer (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{\textbf{ Film} $\ast$}]{mivel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter amely az i. film pointeret beallitja a megadott film pointerre. \mbox{\label{class_filmek_aa108751a1eda8072e076ccfd48f75dfd}} 
+\index{Filmek@{Filmek}!torol@{torol}}
+\index{torol@{torol}!Filmek@{Filmek}}
+\doxysubsubsection{torol()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Filmek\+::torol (\begin{DoxyParamCaption}\item[{\textbf{ Film} \&}]{torlendo }\end{DoxyParamCaption})}
+
+Torli a megadott filmet a listabol. \mbox{\label{class_filmek_ad6d0504755b1d4ba8c75f7ed55ff8b2c}} 
+\index{Filmek@{Filmek}!torol@{torol}}
+\index{torol@{torol}!Filmek@{Filmek}}
+\doxysubsubsection{torol()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Filmek\+::torol (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Torli az i. filmet a listabol. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+film.\+h\item 
+filmcpp.\+cpp\end{DoxyCompactItemize}

@@ -1,12 +1,12 @@
 
-#define _CRTDBG_MAP_ALLOC
-
-
 #include "film.h"
 #include "segedfgvek.h"
 #include "memtrace.h"
 #include "gtest_lite.h"
-#include <crtdbg.h>
+#include <iostream>
+#include <fstream>
+
+#define JPORTA_INPUT_SIM
 using namespace std;
 void test_0(Filmek& lista) {
     TEST(Beolvasas, Beolvasas) {
@@ -67,21 +67,19 @@ void test_5(Filmek& lista) {
 }
 
 int main() {
-	Filmek lista;
-	int  answer;
+    Filmek lista;
+    int  answer;
     cout << "1-Test,2-Hasznalat" << endl;
-	beolvas(lista);
+    beolvas(lista);
+    int fut = 0;
+#ifdef JPORTA_INPUT_SIM
+    std::ifstream in("standard_input.txt");
+    std::cin.rdbuf(in.rdbuf());
+    fut = 1;
+#endif // JPORTASIM
     cin >> answer;
-    cin.ignore();
-    if (answer == 1) {
-        test_0(lista);
-        test_1(lista);
-        test_2(lista);
-        test_3(lista);
-        test_4(lista);
-        test_5(lista);
-    }
-    if (answer == 2) {
+    cout << answer;
+    if (answer == 2 ) {
         do
         {
             menukiir();
@@ -125,6 +123,15 @@ int main() {
             }
         } while (answer != 0);
         visszair(lista);
+    }
+    if (fut == 1) {
+        beolvas(lista);
+        test_0(lista);
+        test_1(lista);
+        test_2(lista);
+        test_3(lista);
+        test_4(lista);
+        test_5(lista);
     }
 	return 0;
 }

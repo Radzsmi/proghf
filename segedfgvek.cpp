@@ -64,7 +64,6 @@ void beolvas(Filmek& lista) {
 	int hossz;
 	int kiadas;
 	char jeloles;
-	bool sorveg = false;
 	f.open("filmlista.txt", ios::in);
 	if (!f) {
 	}
@@ -73,14 +72,12 @@ void beolvas(Filmek& lista) {
 		std::getline(f, sor);
 		while (!f.eof())
 		{
-			sorveg = true;
 			jeloles = sor[0];
 			for (int i = 2; i<int(sor.length()); i++) nev += sor[i];
 			std::getline(f, sor);
 			hossz = std::atoi(sor.c_str());
 			std::getline(f, sor);
 			kiadas = std::atoi(sor.c_str());
-			sorveg = false;
 			std::getline(f, sor);
 			if (jeloles != 'F') {
 				Film* tmp = customconst(nev, hossz, kiadas, jeloles, sor);

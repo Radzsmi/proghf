@@ -1,6 +1,19 @@
 -
-D:sajat filmem
-9275
+D:A gorogok elete
+12314
+2012
+A gorok eleterol szolo alkotas.Minden perce orom.
+-
+F:egy film
+1231432
 2001
-Projekt feladat volt bioszra,szoval eleg gagyi.
+-
+F:Egy masik film
+221314
+2003
+-
+D:A gorogok elete 2
+214314
+2016
+A gorogok eleterol szolo film folytatasa
 -
