@@ -45,3 +45,13 @@ A tesztprogram működése
 
 A tesztprogram egy előre elkészített eseménysorozatot fog lejátszani és ezek helyességét fogja kiértékelni.A tesztesetek a program működését fogják szimulálni,mivel az adatok beolvasása nem kivételt hanem újbóli bekérést eredményez ezért azokra nem terjed ki.(viszont ezeket is megvalósítja a program)
 A tesztet a jporta definiálásával lehet elindítani de lehetőség lesz a program kipróbálásra is.
+
+A tesztprogram lefuttat a lehető legtöbb esetet,de g_test segítségével csak az előre megírt tesztesetek futnak.Viszont a nem ellenőrzött tesztesetek eredménye az hogy a program majdnem minden függvénye meghívódik és a filmlista.txt változatlan marad hiszen a teszt a törlést is meghívja.(Erre a hibás bekérések miatti ellenőrzésre van szükség.)
+
+A dokumentáció
+
+A doxygen program segítségével.Ékezetek nélkül,mivel különböző karaktereket nem jelenít meg a program.
+
+Bővíthetőség
+
+A program bővítéséhez a filmtipusok.h-ban kell egy új classt definiálni getter,setter,konstruktorral és a segedfgvek.cpp-ben a custromconst fgvben beleírni hogy a megfelelő jelnél a jó konstruktor hívódjon meg.
