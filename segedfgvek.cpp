@@ -3,8 +3,6 @@
 #include <fstream>
 #include<string>
 #include "segedfgvek.h"
-#include  "film.h"
-#include "filmtipusok.h"
 using namespace std;
 
 Film* customconst(std::string nev, int hossz, int kiadas, char jel, std::string sor) {

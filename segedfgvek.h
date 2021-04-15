@@ -2,32 +2,34 @@
 #ifndef SEGEDFGVEK_H_INCLUDED
 #define SEGEDFGVEK_H_INCLUDED
 #include  "film.h"
+#include "filmtipusok.h"
 
-/** @brief Ez a .h file a segedfuggvenyeket tarolja az elegansabb kod erdekeben.
+/**@file segedfgvek.h
+* This header contains the functions wich is to help the other functions.
 */
 
-/** Ez a fuggveny a menu kiiratasat vegzi el.
+/** Function to display the menu.
 */
 void menukiir();
-/** Ez a fuggveny enter hatasara torli a kepernyot.
+/** Function to clear the screen.
 */
 void clrscreen();
-/** Ez a fuggveny torli a txt-t amennyiben letezik.
+/** This function is to delete the txt file if it exsits.
 */
 void txtTorol();
-/** Ez a fuggveny meghivja a megfelelo konstruktort a megfelelo film tipushoz.
+/** This function is to decide witch constructor to call.
 */
 Film* customconst(std::string, int, int, char, std::string);
-/** Ez a fuggveny egy szamot olvas be,hibas adat megadasakor ujboli bekerest kezdemenyez.
+/** This is a safe input for numbers,if the input is invalid then another entering is called.
 */
 int getszam();
-/** Ez a fuggveny egy chart olvas be,ha hibas ujboli bekerest kezdemenyez.
+/** This function is to read in a char,if the input is invalid then another entering is called.
 */
 char getjel();
-/** Ez a fuggveny beolvassa a filmeket egy Filmek objektumba.
+/** This function is to read all the movies and store them in the given Filmek object.
 */
 void beolvas(Filmek& lista);
-/** Ez a fuggveny felulirja az eddigi "filmlista.txt"-t es belehelyezi a jelenlegi lista tartalmat.
+/** This function is to overwrite the "filmlista.txt",and write all the stored movies into it.
 */
 void visszair(Filmek& lista);
 #endif

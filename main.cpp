@@ -5,9 +5,17 @@
 #include "gtest_lite.h"
 #include <iostream>
 #include <fstream>
+/**
+* @file main.cpp
+* A program futasta vezenylo cpp file.
+* Az ellenorzesek es a funkciok meghivasat kezeli.
+*/
 
 #define JPORTA_INPUT_SIM
 using namespace std;
+/**
+* Ellenorzes a beolvasara.
+*/
 void test_0(Filmek& lista) {
     TEST(Beolvasas, Beolvasas) {
         if (lista.getMeret() != 0) {
@@ -15,6 +23,8 @@ void test_0(Filmek& lista) {
         }
     }END;
 }
+/**Ellenorzes a filmek hozzaadasara.
+*/
 void test_1(Filmek& lista) {
     TEST(Addolas, addolas) {
         lista.add("uj film", 1234, 1975, 'F');   //add default film
@@ -24,6 +34,8 @@ void test_1(Filmek& lista) {
         EXPECT_EQ(lista.getFilm(lista.getMeret() - 1).getPlusData(), "18") << "Nem jol adott hozza plusz adatot/filmet.";
     }END;
 }
+/**Ellenorzes a keresesre.
+*/
 void test_2(Filmek& lista) {
     TEST(Kereses, kereses) {
         Filmek tmp;
@@ -34,6 +46,8 @@ void test_2(Filmek& lista) {
         }
     }END;
 }
+/**Ellenorzes a  torlesre.
+*/
 void test_3(Filmek& lista) {
     TEST(Torles, Torles) {
         Filmek tmp;
@@ -45,6 +59,8 @@ void test_3(Filmek& lista) {
         }
     }END;
 }
+/**Ellenorzes a modositasra.
+*/
 void test_4(Filmek& lista) {
     TEST(Modositas, Modositas) {
         Filmek tmp;
@@ -56,6 +72,8 @@ void test_4(Filmek& lista) {
         }
     }END;
 }
+/**Ellenorzes a visszairasra.
+*/
 void test_5(Filmek& lista) {
     TEST(Visszairas, Visszairas) {
         visszair(lista);
@@ -72,7 +90,7 @@ int main() {
     cout << "1-Test,2-Hasznalat" << endl;
     beolvas(lista);
     int fut = 0;
-#ifdef JPORTA_INPUT_SIM
+#ifdef JPORTA_INPUT_SIM //jporta ellenorzest iranyitja.
     std::ifstream in("standard_input.txt");
     std::cin.rdbuf(in.rdbuf());
     fut = 1;
