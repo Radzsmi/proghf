@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['dokumentumfilm_3',['DokumentumFilm',['../class_dokumentum_film.html',1,'DokumentumFilm'],['../class_dokumentum_film.html#a3416b55fbeb8feb3b384345eedf9a3de',1,'DokumentumFilm::DokumentumFilm(Film &amp;myfilm)'],['../class_dokumentum_film.html#a5cbf85ecb7a1fd27e3bc72cb8ac7ba3d',1,'DokumentumFilm::DokumentumFilm(std::string nev, int hossz, int kiadas, char jeloles, std::string plusdata)']]]
+  ['begin_8',['begin',['../structgtest__lite_1_1_test.html#a2227b70fcc5dfb3c326bf117dd8f7e79',1,'gtest_lite::Test']]],
+  ['beolvas_9',['beolvas',['../segedfgvek_8h.html#aadc5b0d0f759d76fb1dae3c35fb5ef66',1,'segedfgvek.cpp']]]
 ];

@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['getfilm_46',['getFilm',['../class_filmek.html#a63d5afeabf0f2df70b29e08f69e42534',1,'Filmek']]],
-  ['getfilmekpointer_47',['getFilmekPointer',['../class_filmek.html#aee1fbe2a1b660d03fbbb892ee12907d3',1,'Filmek']]],
-  ['getfilmpointer_48',['getFilmPointer',['../class_filmek.html#a4f8c4e676849c17950f8546a01a08ee8',1,'Filmek']]],
-  ['gethossz_49',['getHossz',['../class_film.html#a2e2187ea672c378ede34e75398212778',1,'Film']]],
-  ['getjel_50',['getJel',['../class_film.html#a6994b43d10ed0b1fc2da864ee2c29c98',1,'Film']]],
-  ['getkiadas_51',['getKiadas',['../class_film.html#ad0fd82319e79cafab430d3dfebac2756',1,'Film']]],
-  ['getkiirhossz_52',['getKiirhossz',['../class_film.html#a18b43411ef3d21dab5b91bf02f56097e',1,'Film']]],
-  ['getmeret_53',['getMeret',['../class_filmek.html#a0e69df8ca289fba13b157d3c2235ebbe',1,'Filmek']]],
-  ['getnev_54',['getNev',['../class_film.html#a30486d664f037c3d0d0a3ca8437ccb32',1,'Film']]],
-  ['getplusdata_55',['getPlusData',['../class_film.html#ad6751eb5e615b60d0dff29dabee6f883',1,'Film::getPlusData()'],['../class_dokumentum_film.html#a3a3837c1113ec7ffacda616166916307',1,'DokumentumFilm::getPlusData()'],['../class_csaladi_film.html#a6ff8b91930e0021d175d4f3fc054b900',1,'CsaladiFilm::getPlusData()']]]
+  ['end_126',['end',['../structgtest__lite_1_1_test.html#a658c1eee35f170294c354ebf4d3fc1ba',1,'gtest_lite::Test']]],
+  ['eq_127',['eq',['../namespacegtest__lite.html#a884f0c7c25d80d78a73c759a8fc43a3d',1,'gtest_lite']]],
+  ['expect_128',['expect',['../structgtest__lite_1_1_test.html#a0bca03315e5963f7fdfffd92d2daed6a',1,'gtest_lite::Test']]],
+  ['expect_5f_129',['EXPECT_',['../namespacegtest__lite.html#a73d2ede1d983327aea4fdd5b1d2709ce',1,'gtest_lite::EXPECT_(T1 exp, T2 act, bool(*pred)(T1, T2), const char *file, int line, const char *expr, const char *lhs=&quot;elvart&quot;, const char *rhs=&quot;aktual&quot;)'],['../namespacegtest__lite.html#a835d542f226b31cf5cd28033303aa7d7',1,'gtest_lite::EXPECT_(T1 *exp, T2 *act, bool(*pred)(T1 *, T2 *), const char *file, int line, const char *expr, const char *lhs=&quot;elvart&quot;, const char *rhs=&quot;aktual&quot;)']]],
+  ['expectstr_130',['EXPECTSTR',['../namespacegtest__lite.html#aea477921e4c26d2a2806bc3011066270',1,'gtest_lite']]]
 ];

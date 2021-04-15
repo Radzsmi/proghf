@@ -1,0 +1,78 @@
+\hypertarget{segedfgvek_8h}{}\doxysection{segedfgvek.\+h File Reference}
+\label{segedfgvek_8h}\index{segedfgvek.h@{segedfgvek.h}}
+{\ttfamily \#include \char`\"{}film.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filmtipusok.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{segedfgvek_8h_a1e21fbcd1cdb2a1ca950f07e1d797482}{menukiir}} ()
+\item 
+void \mbox{\hyperlink{segedfgvek_8h_a0e18094aab9f100521dbecf4b67dc759}{clrscreen}} ()
+\item 
+void \mbox{\hyperlink{segedfgvek_8h_a921a09d4d3d6d0319b0f7fde6394caac}{txt\+Torol}} ()
+\item 
+\mbox{\hyperlink{class_film}{Film}} $\ast$ \mbox{\hyperlink{segedfgvek_8h_a7bc8e4bb4edb6b2bbb1991ef9a3970b3}{customconst}} (std\+::string, int, int, char, std\+::string)
+\item 
+int \mbox{\hyperlink{segedfgvek_8h_a590e34cf5e21dd9a02a34b149afafcb8}{getszam}} ()
+\item 
+char \mbox{\hyperlink{segedfgvek_8h_a95be941d4c97ef71aa8a3ad934e11497}{getjel}} ()
+\item 
+void \mbox{\hyperlink{segedfgvek_8h_aadc5b0d0f759d76fb1dae3c35fb5ef66}{beolvas}} (\mbox{\hyperlink{class_filmek}{Filmek}} \&lista)
+\item 
+void \mbox{\hyperlink{segedfgvek_8h_af81f5de1953525b738c96e3eb43db389}{visszair}} (\mbox{\hyperlink{class_filmek}{Filmek}} \&lista)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header contains the functions wich is to help the other functions. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{segedfgvek_8h_aadc5b0d0f759d76fb1dae3c35fb5ef66}\label{segedfgvek_8h_aadc5b0d0f759d76fb1dae3c35fb5ef66}} 
+\index{segedfgvek.h@{segedfgvek.h}!beolvas@{beolvas}}
+\index{beolvas@{beolvas}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{beolvas()}{beolvas()}}
+{\footnotesize\ttfamily void beolvas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_filmek}{Filmek}} \&}]{lista }\end{DoxyParamCaption})}
+
+This function is to read all the movies and store them in the given \mbox{\hyperlink{class_filmek}{Filmek}} object. \mbox{\Hypertarget{segedfgvek_8h_a0e18094aab9f100521dbecf4b67dc759}\label{segedfgvek_8h_a0e18094aab9f100521dbecf4b67dc759}} 
+\index{segedfgvek.h@{segedfgvek.h}!clrscreen@{clrscreen}}
+\index{clrscreen@{clrscreen}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{clrscreen()}{clrscreen()}}
+{\footnotesize\ttfamily void clrscreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to clear the screen. \mbox{\Hypertarget{segedfgvek_8h_a7bc8e4bb4edb6b2bbb1991ef9a3970b3}\label{segedfgvek_8h_a7bc8e4bb4edb6b2bbb1991ef9a3970b3}} 
+\index{segedfgvek.h@{segedfgvek.h}!customconst@{customconst}}
+\index{customconst@{customconst}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{customconst()}{customconst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_film}{Film}}$\ast$ customconst (\begin{DoxyParamCaption}\item[{std\+::string}]{nev,  }\item[{int}]{hossz,  }\item[{int}]{kiadas,  }\item[{char}]{jel,  }\item[{std\+::string}]{sor }\end{DoxyParamCaption})}
+
+This function is to decide witch constructor to call. \mbox{\Hypertarget{segedfgvek_8h_a95be941d4c97ef71aa8a3ad934e11497}\label{segedfgvek_8h_a95be941d4c97ef71aa8a3ad934e11497}} 
+\index{segedfgvek.h@{segedfgvek.h}!getjel@{getjel}}
+\index{getjel@{getjel}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{getjel()}{getjel()}}
+{\footnotesize\ttfamily char getjel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function is to read in a char,if the input is invalid then another entering is called. \mbox{\Hypertarget{segedfgvek_8h_a590e34cf5e21dd9a02a34b149afafcb8}\label{segedfgvek_8h_a590e34cf5e21dd9a02a34b149afafcb8}} 
+\index{segedfgvek.h@{segedfgvek.h}!getszam@{getszam}}
+\index{getszam@{getszam}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{getszam()}{getszam()}}
+{\footnotesize\ttfamily int getszam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is a safe input for numbers,if the input is invalid then another entering is called. \mbox{\Hypertarget{segedfgvek_8h_a1e21fbcd1cdb2a1ca950f07e1d797482}\label{segedfgvek_8h_a1e21fbcd1cdb2a1ca950f07e1d797482}} 
+\index{segedfgvek.h@{segedfgvek.h}!menukiir@{menukiir}}
+\index{menukiir@{menukiir}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{menukiir()}{menukiir()}}
+{\footnotesize\ttfamily void menukiir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to display the menu. \mbox{\Hypertarget{segedfgvek_8h_a921a09d4d3d6d0319b0f7fde6394caac}\label{segedfgvek_8h_a921a09d4d3d6d0319b0f7fde6394caac}} 
+\index{segedfgvek.h@{segedfgvek.h}!txtTorol@{txtTorol}}
+\index{txtTorol@{txtTorol}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{txtTorol()}{txtTorol()}}
+{\footnotesize\ttfamily void txt\+Torol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function is to delete the txt file if it exsits. \mbox{\Hypertarget{segedfgvek_8h_af81f5de1953525b738c96e3eb43db389}\label{segedfgvek_8h_af81f5de1953525b738c96e3eb43db389}} 
+\index{segedfgvek.h@{segedfgvek.h}!visszair@{visszair}}
+\index{visszair@{visszair}!segedfgvek.h@{segedfgvek.h}}
+\doxysubsubsection{\texorpdfstring{visszair()}{visszair()}}
+{\footnotesize\ttfamily void visszair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_filmek}{Filmek}} \&}]{lista }\end{DoxyParamCaption})}
+
+This function is to overwrite the \char`\"{}filmlista.\+txt\char`\"{},and write all the stored movies into it. 

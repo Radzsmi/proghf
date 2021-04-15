@@ -1,9 +1,16 @@
 var searchData=
 [
-  ['keres_57',['keres',['../class_filmek.html#ae7a8e8ed2d3926a467f378ee0e660a9e',1,'Filmek']]],
-  ['kereslistaz_58',['kereslistaz',['../class_filmek.html#acab64f7b457518ed93a4e9f6cfca0f16',1,'Filmek']]],
-  ['keresvemodosit_59',['keresveModosit',['../class_filmek.html#a2ecfa5fdb7847c4003bee22e85c7f333',1,'Filmek']]],
-  ['keresvetorol_60',['keresveTorol',['../class_filmek.html#ad0ceb9656ae9dad604f923c90cf78907',1,'Filmek']]],
-  ['kiir_61',['kiir',['../class_film.html#a477561511351f3843459e9c7bf25f3f1',1,'Film']]],
-  ['kilistaz_62',['kilistaz',['../class_filmek.html#a95fb99d71414ce42d6d2e1e9186df11a',1,'Filmek']]]
+  ['getfilm_134',['getFilm',['../class_filmek.html#a63d5afeabf0f2df70b29e08f69e42534',1,'Filmek']]],
+  ['getfilmekpointer_135',['getFilmekPointer',['../class_filmek.html#aee1fbe2a1b660d03fbbb892ee12907d3',1,'Filmek']]],
+  ['getfilmpointer_136',['getFilmPointer',['../class_filmek.html#a4f8c4e676849c17950f8546a01a08ee8',1,'Filmek']]],
+  ['gethossz_137',['getHossz',['../class_film.html#a2e2187ea672c378ede34e75398212778',1,'Film']]],
+  ['getjel_138',['getJel',['../class_film.html#a6994b43d10ed0b1fc2da864ee2c29c98',1,'Film']]],
+  ['getjel_139',['getjel',['../segedfgvek_8h.html#a95be941d4c97ef71aa8a3ad934e11497',1,'segedfgvek.cpp']]],
+  ['getkiadas_140',['getKiadas',['../class_film.html#ad0fd82319e79cafab430d3dfebac2756',1,'Film']]],
+  ['getkiirhossz_141',['getKiirhossz',['../class_film.html#a18b43411ef3d21dab5b91bf02f56097e',1,'Film']]],
+  ['getmeret_142',['getMeret',['../class_filmek.html#a0e69df8ca289fba13b157d3c2235ebbe',1,'Filmek']]],
+  ['getnev_143',['getNev',['../class_film.html#a30486d664f037c3d0d0a3ca8437ccb32',1,'Film']]],
+  ['getplusdata_144',['getPlusData',['../class_film.html#ad6751eb5e615b60d0dff29dabee6f883',1,'Film::getPlusData()'],['../class_dokumentum_film.html#a3a3837c1113ec7ffacda616166916307',1,'DokumentumFilm::getPlusData()'],['../class_csaladi_film.html#a6ff8b91930e0021d175d4f3fc054b900',1,'CsaladiFilm::getPlusData()']]],
+  ['getszam_145',['getszam',['../segedfgvek_8h.html#a590e34cf5e21dd9a02a34b149afafcb8',1,'segedfgvek.cpp']]],
+  ['gettest_146',['getTest',['../structgtest__lite_1_1_test.html#a532aa4c5e33e41ce8139b9c9098aa6f2',1,'gtest_lite::Test']]]
 ];
